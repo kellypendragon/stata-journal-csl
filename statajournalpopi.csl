@@ -166,15 +166,17 @@
   </group>
 </macro>
 
-  <macro name="label-collection-number">
-    <group delimiter=" ">
-      <choose>
-          <label form="short" variable="collection-number"/>
-        </if>
-      </choose>
-      <text variable="collection-number"/>
-    </group>
-  </macro>
+<macro name="label-collection-number">
+  <group delimiter=" ">
+    <choose>
+      <if variable="collection-number">
+        <label form="short" variable="collection-number"/>
+      </if>
+    </choose>
+    <text variable="collection-number"/>
+  </group>
+</macro>
+
   <macro name="label-edition">
     <group delimiter=" ">
       <choose>
