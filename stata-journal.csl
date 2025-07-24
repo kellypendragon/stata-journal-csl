@@ -5,15 +5,13 @@
     <title>Stata Journal (Chicago–based, tag &amp; pagination customized)</title>
     <id>http://www.zotero.org/styles/stata-journal-custom</id>
     <link href="http://www.zotero.org/styles/stata-journal-custom" rel="self"/>
-    <author>
-      <name>Your Name</name>
-    </author>
+    <author><name>Your Name</name></author>
     <updated>2025-07-24T00:00:00+00:00</updated>
   </info>
 
   <macro name="author">
     <names variable="author">
-      <name and="text" delimiter=", " initialize-with=". " et-al-min= "4 " et-al-use-first= "1 "/>
+      <name and="text" delimiter=", " initialize-with=". " et-al-min="4" et-al-use-first="1"/>
     </names>
   </macro>
 
