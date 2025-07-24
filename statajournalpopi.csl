@@ -145,14 +145,14 @@
       </date>
   <text variable="archive_location" prefix="" suffix=". "/>
 </macro>
-        <name delimiter=", " initialize-with="."/>
+        
   
   <macro name="author-names">
       <names variable="author">
         <name delimiter=", " initialize-with="."/>
       </names>
   </macro>
-</names>
+
   </macro>
     <group delimiter=" ">
       <choose>
