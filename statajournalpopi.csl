@@ -155,7 +155,7 @@
 <macro name="fix-this">
   <group delimiter=" ">
     <choose>
-      <if>
+      <if variable="track">
         <text text-case="capitalize-first" value="track"/>
       </if>
       <else-if is-numeric="chapter-number">
