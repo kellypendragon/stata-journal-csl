@@ -146,25 +146,26 @@
   <text variable="archive_location" prefix="" suffix=". "/>
 </macro>
         
-  
 <macro name="author-names">
   <names variable="author">
     <name delimiter=", " initialize-with="."/>
   </names>
 </macro>
 
-  <macro>
-    <group delimiter=" ">
-      <choose>
-          <text text-case="capitalize-first" value="track"/>
-        </if>
-        <else-if is-numeric="chapter-number">
-          <label form="short" text-case="capitalize-first" variable="chapter-number"/>
-        </else-if>
-      </choose>
-      <text text-case="capitalize-first" variable="chapter-number"/>
-    </group>
-  </macro>
+<macro name="fix-this">
+  <group delimiter=" ">
+    <choose>
+      <if>
+        <text text-case="capitalize-first" value="track"/>
+      </if>
+      <else-if is-numeric="chapter-number">
+        <label form="short" text-case="capitalize-first" variable="chapter-number"/>
+      </else-if>
+    </choose>
+    <text text-case="capitalize-first" variable="chapter-number"/>
+  </group>
+</macro>
+
   <macro name="label-collection-number">
     <group delimiter=" ">
       <choose>
