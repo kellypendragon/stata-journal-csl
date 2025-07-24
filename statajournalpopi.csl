@@ -155,9 +155,9 @@
 <macro name="fix-this">
   <group delimiter=" ">
     <choose>
-      <if variable="track">
-        <text text-case="capitalize-first" value="track"/>
-      </if>
+      <if variable="chapter-number">
+  <text text-case="capitalize-first" value="track"/>
+</if>
       <else-if is-numeric="chapter-number">
         <label form="short" text-case="capitalize-first" variable="chapter-number"/>
       </else-if>
@@ -177,35 +177,36 @@
   </group>
 </macro>
 
-  <macro name="label-edition">
-    <group delimiter=" ">
-      <choose>
-          <number form="ordinal" variable="edition"/>
-          <label form="short" variable="edition"/>
-        </if>
-        <else-if match="any" type="article-journal article-magazine article-newspaper periodical post-weblog review review-book">
-          <!-- full label for serial edition (CMOS18 14.89) -->
+<macro name="label-edition">
+  <group delimiter=" ">
+    <choose>
+      <if variable="edition">
+        <number form="ordinal" variable="edition"/>
+        <label form="short" variable="edition"/>
+      </if>
+      <else-if match="any" type="article-journal article-magazine article-newspaper periodical post-weblog review review-book">
+        <!-- full label for serial edition (CMOS18 14.89) -->
+        <text variable="edition"/>
+        <label variable="edition"/>
+      </else-if>
+      <else-if match="any" type="interview paper-conference">
+        <choose>
+          <!-- monographic usage -->
           <text variable="edition"/>
-          <label variable="edition"/>
-        </else-if>
-        <else-if match="any" type="interview paper-conference">
-          <choose>
-              <!-- monographic usage -->
-              <text variable="edition"/>
-            </if>
-            <else>
-              <!-- serial usage -->
-              <text variable="edition"/>
-              <label variable="edition"/>
-            </else>
-          </choose>
-        </else-if>
-        <else>
-          <text variable="edition"/>
-        </else>
-      </choose>
-    </group>
-  </macro>
+          <else>
+            <!-- serial usage -->
+            <text variable="edition"/>
+            <label variable="edition"/>
+          </else>
+        </choose>
+      </else-if>
+      <else>
+        <text variable="edition"/>
+      </else>
+    </choose>
+  </group>
+</macro>
+
   <macro name="label-edition-capitalized">
     <group delimiter=" ">
       <choose>
