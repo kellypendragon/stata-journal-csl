@@ -181,22 +181,27 @@
   <group delimiter=" ">
     <choose>
       <if variable="edition">
-        <number form="ordinal" variable="edition"/>
-        <label form="short" variable="edition"/>
+        <group>
+          <number form="ordinal" variable="edition"/>
+          <label form="short" variable="edition"/>
+        </group>
       </if>
       <else-if match="any" type="article-journal article-magazine article-newspaper periodical post-weblog review review-book">
-        <!-- full label for serial edition (CMOS18 14.89) -->
-        <text variable="edition"/>
-        <label variable="edition"/>
+        <group>
+          <text variable="edition"/>
+          <label variable="edition"/>
+        </group>
       </else-if>
       <else-if match="any" type="interview paper-conference">
         <choose>
-          <!-- monographic usage -->
-          <text variable="edition"/>
-          <else>
-            <!-- serial usage -->
+          <if variable="edition">
             <text variable="edition"/>
-            <label variable="edition"/>
+          </if>
+          <else>
+            <group>
+              <text variable="edition"/>
+              <label variable="edition"/>
+            </group>
           </else>
         </choose>
       </else-if>
@@ -208,34 +213,40 @@
 </macro>
 
   <macro name="label-edition-capitalized">
-    <group delimiter=" ">
-      <choose>
+  <group delimiter=" ">
+    <choose>
+      <if variable="edition">
+        <group>
           <number form="ordinal" variable="edition"/>
           <label form="short" variable="edition"/>
-        </if>
-        <else-if match="any" type="article-journal article-magazine article-newspaper periodical post-weblog review review-book">
-          <!-- full label for serial edition (CMOS18 14.89) -->
+        </group>
+      </if>
+      <else-if match="any" type="article-journal article-magazine article-newspaper periodical post-weblog review review-book">
+        <group>
           <text text-case="title" variable="edition"/>
           <label text-case="capitalize-first" variable="edition"/>
-        </else-if>
-        <else-if match="any" type="interview paper-conference">
-          <choose>
-              <!-- monographic usage -->
-              <text text-case="capitalize-first" variable="edition"/>
-            </if>
-            <else>
-              <!-- serial usage -->
+        </group>
+      </else-if>
+      <else-if match="any" type="interview paper-conference">
+        <choose>
+          <if variable="edition">
+            <text text-case="capitalize-first" variable="edition"/>
+          </if>
+          <else>
+            <group>
               <text text-case="title" variable="edition"/>
               <label text-case="capitalize-first" variable="edition"/>
-            </else>
-          </choose>
-        </else-if>
-        <else>
-          <text text-case="capitalize-first" variable="edition"/>
-        </else>
-      </choose>
-    </group>
-  </macro>
+            </group>
+          </else>
+        </choose>
+      </else-if>
+      <else>
+        <text text-case="capitalize-first" variable="edition"/>
+      </else>
+    </choose>
+  </group>
+</macro>
+
   <macro name="label-issue">
     <group delimiter=" ">
       <label form="short" variable="issue"/>
