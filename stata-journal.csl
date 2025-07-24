@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0"
+       class="note" default-locale="en-US">
+  <info>
+    <title>Stata Journal (Chicago–based, tag & pagination customized)</title>
+    <id>http://www.zotero.org/styles/stata-journal-custom</id>
+    <link href="http://www.zotero.org/styles/stata-journal-custom" rel="self"/>
+    <author><name>Your Name</name></author>
+  </info>
+  <macro name="author">
+    <names variable="author">
+      <name and="text" delimiter=", " initialize-with=". "/>
+      <et-al-min="4" et-al-use-first="1"/>
+    </names>
+  </macro>
+  <macro name="issued">
+    <date variable="issued"><date-part name="year"/></date>
+  </macro>
+  <macro name="tag">
+    <text variable="archive_location"/>
+  </macro>
+  <macro name="title">
+    <text variable="title" text-case="sentence"/>
+  </macro>
+  <macro name="container">
+    <text variable="container-title"/>
+    <text variable="volume" prefix=" "/>
+  </macro>
+  <macro name="pages">
+    <text variable="page" prefix=": "/>
+  </macro>
+
+  <bibliography>
+    <layout delimiter=". ">
+      <text macro="author"/>
+      <text macro="issued" suffix=". "/>
+      <text macro="tag" suffix=". "/>
+      <text macro="title" suffix=". "/>
+      <text macro="container" suffix=""/>
+      <text macro="pages" suffix="."/>
+    </layout>
+  </bibliography>
+
+  <citation>
+    <layout>
+      <text macro="author" suffix=" "/>
+      <text macro="issued"/>
+      <text term="“ et al.” prefix=" " suffix=""/>
+    </layout>
+  </citation>
+</style>
