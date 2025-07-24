@@ -147,11 +147,11 @@
 </macro>
         
   
-  <macro name="author-names">
-      <names variable="author">
-        <name delimiter=", " initialize-with="."/>
-      </names>
-  </macro>
+<macro name="author-names">
+  <names variable="author">
+    <name delimiter=", " initialize-with="."/>
+  </names>
+</macro>
 
   </macro>
     <group delimiter=" ">
