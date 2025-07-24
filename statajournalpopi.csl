@@ -209,16 +209,16 @@
     </group>
   </macro>
 
-  <macro name="label-number-of-volumes">
-    <group delimiter=" ">
-      <text variable="number-of-volumes"/>
-      <choose>
-        <if variable="number-of-volumes">
-          <label form="short" variable="number-of-volumes"/>
-        </if>
-      </choose>
-    </group>
-  </macro>
+ <macro name="label-number-of-volumes">
+  <group delimiter=" ">
+    <text variable="number-of-volumes"/>
+    <choose>
+      <if variable="number-of-volumes">
+        <label form="short" variable="number-of-volumes"/>
+      </if>
+    </choose>
+  </group>
+</macro>
 
   <macro name="label-part-number">
     <group delimiter=" ">
@@ -241,8 +241,10 @@
   <macro name="label-section-capitalized">
     <group delimiter=" ">
       <choose>
-        <label form="short" text-case="capitalize-first" variable="section"/>
-      </choose>
+  <if variable="number" is-numeric="true">
+    <label form="short" text-case="capitalize-first" variable="number"/>
+  </if>
+</choose>
       <text text-case="title" variable="section"/>
     </group>
   </macro>
