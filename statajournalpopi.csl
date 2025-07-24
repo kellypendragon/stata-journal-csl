@@ -138,7 +138,7 @@
        : bill hearing legal_case legislation regulation treaty
   -->
   <!-- Variable labels -->
-  
+
   <macro name="year-and-tag">
       <date variable="issued">
         <date-part name="year"/>
@@ -147,10 +147,9 @@
 </macro>
         <name delimiter=", " initialize-with="."/>
   
-  
-  
   <macro name="author-names">
       <names variable="author">
+        <name delimiter=", " initialize-with="."/>
       </names>
   </macro>
 </names>
