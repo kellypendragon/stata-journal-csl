@@ -145,14 +145,16 @@
       </date>
   <text variable="archive_location" prefix="" suffix=". "/>
 </macro>
-      <names variable="author">
         <name delimiter=", " initialize-with="."/>
+  
+  
+  
+  <macro name="author-names">
+      <names variable="author">
       </names>
+  </macro>
 </names>
-  
-  
-  
-  <macro name="label-chapter-number-capitalized">
+  </macro>
     <group delimiter=" ">
       <choose>
           <text text-case="capitalize-first" value="track"/>
