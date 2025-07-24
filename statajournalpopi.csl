@@ -140,10 +140,11 @@
   <!-- Variable labels -->
   
   <macro name="year-and-tag">
-      <date variable="issued"/>
+      <date variable="issued">
+        <date-part name="year"/>
+      </date>
   <text variable="archive_location" prefix="" suffix=". "/>
 </macro>
-  </group>
   <name and="text" delimiter=", " initialize-with=". "/>
 </names>
   
