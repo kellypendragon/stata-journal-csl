@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" version="1.0"
-       class="note" default-locale="en-US">
+       class="author-date" default-locale="en-US">
   <info>
-    <title>Stata Journal (Chicago–based, tag &amp; pagination customized)</title>
+    <title>Stata Journal</title>
     <id>http://www.zotero.org/styles/stata-journal-custom</id>
     <link href="http://www.zotero.org/styles/stata-journal-custom" rel="self"/>
-    <author><name>Your Name</name></author>
+    <author>
+      <name>Your Name</name>
+    </author>
     <updated>2025-07-24T00:00:00+00:00</updated>
+    <category citation-format="author-date"/>
+    <category field="economics"/>
+    <summary>CSL style for references in the Stata Journal</summary>
   </info>
 
   <macro name="author">
     <names variable="author">
       <name and="text" delimiter=", " initialize-with=". " et-al-min="4" et-al-use-first="1"/>
+      <label form="short" prefix=" " text-case="lowercase" suffix="."/>
     </names>
   </macro>
 
@@ -21,37 +27,54 @@
     </date>
   </macro>
 
-  <macro name="tag">
-    <text variable="archive_location"/>
-  </macro>
-
   <macro name="title">
-    <text variable="title" text-case="sentence"/>
+    <choose>
+      <if type="book thesis report">
+        <text variable="title" font-style="italic"/>
+      </if>
+      <else>
+        <text variable="title"/>
+      </else>
+    </choose>
   </macro>
 
   <macro name="container">
-    <text variable="container-title"/>
-    <text variable="volume" prefix=" "/>
+    <choose>
+      <if type="article-journal article-magazine article-newspaper">
+        <group delimiter=" ">
+          <text variable="container-title" font-style="italic"/>
+          <text variable="volume"/>
+          <text variable="issue" prefix="(" suffix=")"/>
+        </group>
+      </if>
+    </choose>
   </macro>
 
   <macro name="pages">
     <text variable="page" prefix=": "/>
   </macro>
 
-<bibliography>
-  <layout>
-    <text macro="author" suffix=". "/>
-    <text macro="issued" suffix=". "/>
-    <text macro="tag" suffix=". "/>
-    <text macro="title" suffix=". "/>
-    <text macro="container" suffix=". "/>
-    <text macro="pages" suffix="."/>
-  </layout>
-</bibliography>
+  <macro name="publisher">
+    <group delimiter=", ">
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+    </group>
+  </macro>
+
+  <bibliography>
+    <layout>
+      <text macro="author" suffix=". "/>
+      <text macro="issued" suffix=". "/>
+      <text macro="title" suffix=". "/>
+      <text macro="container" suffix=""/>
+      <text macro="pages" suffix=". "/>
+      <text macro="publisher" suffix="."/>
+    </layout>
+  </bibliography>
 
   <citation>
-    <layout>
-      <text macro="author" suffix=" "/>
+    <layout prefix="(" suffix=")" delimiter=", ">
+      <text macro="author"/>
       <text macro="issued"/>
     </layout>
   </citation>
