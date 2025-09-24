@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl"
        version="1.0"
-       class="author-date"
+       class="in-text"
        default-locale="en-US"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <info>
-    <title>The Stata Journal (Chicago author-date — corrected CSL)</title>
+    <title>The Stata Journal (Chicago author-date — corrected CSL v2)</title>
     <id>http://www.stata-journal.com/styles/stata-journal.csl</id>
-    <link href="https://www.stata-journal.com/submissions/"/>
+    <link href="https://www.stata-journal.com/submissions/" rel="documentation"/>
     <author>
       <name>Generated and fixed by ChatGPT</name>
     </author>
     <category citation-format="author-date"/>
-    <summary>Corrected CSL: follows Stata Journal guidance (Chicago-like). Fixed <date> elements with proper attributes.</summary>
+    <summary>Corrected CSL: follows Stata Journal guidance (Chicago-like). Fixed date elements with proper attributes.</summary>
     <updated>2025-09-24T00:00:00Z</updated>
   </info>
 
