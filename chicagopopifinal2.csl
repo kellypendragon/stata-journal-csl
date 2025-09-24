@@ -156,7 +156,7 @@
 </else-if>
 </choose>
 
- 
+
     <choose>
       <if variable="DOI">
         <text prefix="https://doi.org/" variable="DOI"/>
