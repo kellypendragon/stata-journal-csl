@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl"
+       version="1.0"
+       class="author-date"
+       default-locale="en-US"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <info>
+    <title>The Stata Journal (Chicago author-date — corrected CSL)</title>
+    <id>http://www.stata-journal.com/styles/stata-journal.csl</id>
+    <link href="https://www.stata-journal.com/submissions/"/>
+    <author>
+      <name>Generated and fixed by ChatGPT</name>
+    </author>
+    <category citation-format="author-date"/>
+    <summary>Corrected CSL: follows Stata Journal guidance (Chicago-like). Fixed <date> elements with proper attributes.</summary>
+    <updated>2025-09-24T00:00:00Z</updated>
+  </info>
+
+  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-name="true" disambiguate-add-year-suffix="true">
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <group delimiter=", ">
+        <names variable="author" and="text">
+          <name form="short" initialize-with="."/>
+          <label form="short" prefix=" "/>
+        </names>
+        <date variable="issued" form="text">
+          <date-part name="year"/>
+        </date>
+      </group>
+    </layout>
+  </citation>
+
+  <bibliography et-al-min="1000" hanging-indent="true" line-spacing="1">
+    <layout>
+      <group>
+        <names variable="author">
+          <name form="long" and="text" delimiter=", ">
+            <name-part name="family"/>
+            <name-part name="given" prefix=", "/>
+          </name>
+          <label form="short" prefix=" (" suffix=")"/>
+        </names>
+
+        <date variable="issued" form="text" prefix=" (" suffix="). ">
+          <date-part name="year"/>
+        </date>
+
+        <text variable="title" suffix=". " font-style="normal"/>
+
+        <choose>
+          <if type="article-journal">
+            <text variable="container-title" font-style="italic" suffix=" "/>
+            <text variable="volume"/>
+            <text variable="page" prefix=":" suffix="."/>
+          </if>
+
+          <else-if type="book">
+            <text variable="container-title" font-style="italic" suffix="."/>
+            <text variable="publisher" prefix=" " suffix="."/>
+          </else-if>
+
+          <else>
+            <text variable="container-title" font-style="italic" prefix=" " suffix="."/>
+            <text variable="publisher" prefix=" " suffix="."/>
+            <text variable="URL" prefix=" " suffix="."/>
+          </else>
+        </choose>
+      </group>
+    </layout>
+  </bibliography>
+
+  <locale xml:lang="en">
+    <terms>
+      <term name="et-al">et al.</term>
+    </terms>
+  </locale>
+
+</style>
