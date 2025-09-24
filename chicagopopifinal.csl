@@ -155,21 +155,19 @@
 <text macro="archive"/>
 </else-if>
 </choose>
-<choose>
-<if variable="DOI issued" match="all">
-<choose>
-<if variable="URL accessed" match="all">
-<group delimiter=" ">
-<text term="accessed" text-case="capitalize-first"/>
-<date variable="accessed" delimiter=" ">
-<date-part name="month"/>
-<date-part name="day"/>
-</date>
-</group>
-</if>
-</choose>
-</if>
-</choose>
+
+  <macro name="source-DOI-URL">
+    <choose>
+      <if variable="DOI">
+        <text prefix="https://doi.org/" variable="DOI"/>
+      </if>
+      <else-if variable="URL">
+        <text variable="URL"/>
+      </else-if>
+    </choose>
+  </macro>
+
+
 <choose>
 <if type="legal_case" match="none">
 <text variable="URL"/>
