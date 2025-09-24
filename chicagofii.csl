@@ -353,7 +353,7 @@
 </choose>
 </macro>
 <macro name="day-month">
-<date>
+<date variable="issued" form="text">
 <date-part name="month"/>
 <date-part name="day" prefix=" "/>
 </date>
