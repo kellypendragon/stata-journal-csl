@@ -16,19 +16,19 @@
     <updated>2025-09-24T00:00:00Z</updated>
   </info>
 
-  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-name="true" disambiguate-add-year-suffix="true">
-    <layout prefix="(" suffix=")" delimiter="; ">
-      <group delimiter=", ">
-        <names variable="author" and="text">
-          <name form="short" initialize-with="."/>
-          <label form="short" prefix=" "/>
-        </names>
-        <date variable="issued" form="text">
-          <date-part name="year"/>
-        </date>
-      </group>
-    </layout>
-  </citation>
+  <citation et-al-min="4" et-al-use-first="1" disambiguate-add-year-suffix="true">
+  <layout prefix="(" suffix=")" delimiter="; ">
+    <group delimiter=", ">
+      <names variable="author">
+        <name form="short" initialize-with="."/>
+        <label form="short" prefix=" "/>
+      </names>
+      <date variable="issued" form="text">
+        <date-part name="year"/>
+      </date>
+    </group>
+  </layout>
+</citation>
 
   <bibliography et-al-min="1000" hanging-indent="true" line-spacing="1">
     <layout>
