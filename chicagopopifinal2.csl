@@ -170,7 +170,7 @@
 
 <choose>
 <if type="legal_case" match="none">
-<text variable="URL"/>
+
 </if>
 </choose>
 </group>
