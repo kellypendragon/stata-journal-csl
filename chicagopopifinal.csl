@@ -156,7 +156,7 @@
 </else-if>
 </choose>
 <choose>
-<if variable="DOI issued" match="none">
+<if variable="DOI issued" match="all">
 <choose>
 <if variable="URL accessed" match="all">
 <group delimiter=" ">
