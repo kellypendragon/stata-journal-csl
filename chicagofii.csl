@@ -354,8 +354,9 @@
 </macro>
 <macro name="day-month">
 <date variable="issued" form="text">
-<date-part name="month"/>
-<date-part name="day" prefix=" "/>
+  <date-part name="year"/>
+  <date-part name="month"/>
+  <date-part name="day"/>
 </date>
 </macro>
 <macro name="collection-title">
