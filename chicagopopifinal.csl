@@ -6,7 +6,7 @@
 <link href="http://www.zotero.org/styles/chicago-author-date" rel="template"/>
 <link href="http://www.tandf.co.uk/journals/authors/style/reference/tf_F.pdf" rel="documentation"/>
 <author>
-<name>Sebastian Karcher</name>
+<name> Popi </name>
 </author>
 <category citation-format="author-date"/>
 <summary>The author-date variant of the Chicago style as used by Taylor and Francis</summary>
@@ -354,9 +354,8 @@
 </macro>
 <macro name="day-month">
 <date variable="issued" form="text">
-  <date-part name="year"/>
-  <date-part name="month"/>
-  <date-part name="day"/>
+
+ 
 </date>
 </macro>
 <macro name="collection-title">
