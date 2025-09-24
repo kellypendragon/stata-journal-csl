@@ -156,7 +156,7 @@
 </else-if>
 </choose>
 
-  <macro name="source-DOI-URL">
+ 
     <choose>
       <if variable="DOI">
         <text prefix="https://doi.org/" variable="DOI"/>
@@ -165,7 +165,7 @@
         <text variable="URL"/>
       </else-if>
     </choose>
-  </macro>
+
 
 
 <choose>
