@@ -319,7 +319,7 @@
 <macro name="container-title">
 <choose>
 <if type="chapter paper-conference" match="any">
-<text macro="container-prefix" suffix=" "/>
+
 </if>
 </choose>
 <choose>
