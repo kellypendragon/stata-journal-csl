@@ -315,9 +315,7 @@
 </if>
 </choose>
 </macro>
-<macro name="container-prefix">
-<text term="in" text-case="capitalize-first"/>
-</macro>
+
 <macro name="container-title">
 <choose>
 <if type="chapter paper-conference" match="any">
